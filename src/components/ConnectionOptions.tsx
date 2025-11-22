@@ -34,7 +34,7 @@ const options = [
 
 const ConnectionOptions = () => {
   return (
-    <section className="py-16 md:py-24 bg-secondary/30">
+    <section id="help" className="py-16 md:py-24 bg-secondary/30">
       <div className="container px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
@@ -49,13 +49,13 @@ const ConnectionOptions = () => {
           {options.map((option) => (
             <Card 
               key={option.title}
-              className="p-6 hover:shadow-lg transition-all duration-300 border-border bg-card flex flex-col"
+              className="p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-2 border-border bg-card flex flex-col group cursor-pointer"
             >
               <div className="mb-6 flex justify-center">
                 <img 
                   src={option.image} 
                   alt={option.title}
-                  className="w-24 h-24 object-contain"
+                  className="w-24 h-24 object-contain transition-transform duration-300 group-hover:scale-110"
                 />
               </div>
               

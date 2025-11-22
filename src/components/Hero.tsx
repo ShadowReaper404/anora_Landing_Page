@@ -3,7 +3,7 @@ import heroImage from "@/assets/hero-mental-health.jpg";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-[600px] flex items-center justify-center overflow-hidden">
+    <section id="home" className="relative min-h-[600px] flex items-center justify-center overflow-hidden pt-16">
       <div 
         className="absolute inset-0 z-0"
         style={{
