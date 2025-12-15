@@ -4,6 +4,7 @@ import ConnectionOptions from "@/components/ConnectionOptions";
 import StatsSection from "@/components/StatsSection";
 import TrustSection from "@/components/TrustSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
+import ResourcesSection from "@/components/ResourcesSection";
 import FAQSection from "@/components/FAQSection";
 import Footer from "@/components/Footer";
 import SOSButton from "@/components/SOSButton";
@@ -17,6 +18,7 @@ const Index = () => {
       <StatsSection />
       <TrustSection />
       <TestimonialsSection />
+      <ResourcesSection />
       <FAQSection />
       <Footer />
       <SOSButton />
