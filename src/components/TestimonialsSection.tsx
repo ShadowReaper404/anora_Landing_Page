@@ -145,15 +145,15 @@ const TestimonialsSection = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12 text-center">
             <div className="p-6 rounded-lg bg-accent/30">
               <div className="text-3xl font-bold text-primary mb-2">98%</div>
-              <p className="text-sm text-muted-foreground">Satisfaction Rate</p>
+              <p className="text-sm text-muted-foreground"><strong>Satisfaction Rate</strong></p>
             </div>
             <div className="p-6 rounded-lg bg-accent/30">
               <div className="text-3xl font-bold text-primary mb-2">4.9/5</div>
-              <p className="text-sm text-muted-foreground">Average Rating</p>
+              <p className="text-sm text-muted-foreground"><strong>Average Rating</strong></p>
             </div>
             <div className="p-6 rounded-lg bg-accent/30">
-              <div className="text-3xl font-bold text-primary mb-2">50K+</div>
-              <p className="text-sm text-muted-foreground">Success Stories</p>
+              <div className="text-3xl font-bold text-primary mb-2">30K+</div>
+              <p className="text-sm text-muted-foreground"><strong>Success Stories</strong></p>
             </div>
           </div>
         </div>

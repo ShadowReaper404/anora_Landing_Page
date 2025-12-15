@@ -47,7 +47,7 @@ const ConnectionOptions = () => {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section id="connect" className="py-16 md:py-24 bg-gradient-to-b from-secondary/30 to-background">
+    <section id="help" className="py-16 md:py-24 bg-gradient-to-b from-secondary/30 to-background">
       <div className="container px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground flex items-center justify-center gap-2">

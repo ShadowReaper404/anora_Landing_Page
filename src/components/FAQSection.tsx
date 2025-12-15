@@ -16,7 +16,7 @@ const faqs = [
   },
   {
     question: "What should I do in a crisis?",
-    answer: "If you're experiencing a mental health emergency, please use the SOS button on this page or call 988 (Suicide & Crisis Lifeline) immediately. You can also text HOME to 741741 for the Crisis Text Line. Our platform is for support, but emergency services are equipped for crisis situations.",
+    answer: "If you're experiencing a mental health emergency, please use the SOS button on this page or call 1333 (Suicide & Crisis Lifeline) immediately. Our platform is for support, but emergency services are equipped for crisis situations.",
   },
   {
     question: "How much does it cost?",

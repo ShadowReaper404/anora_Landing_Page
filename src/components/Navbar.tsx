@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -34,7 +35,7 @@ const Navbar = () => {
           {/* Logo */}
           <div className="flex items-center gap-2 hover-scale cursor-pointer">
             <Heart className="h-6 w-6 text-primary" fill="currentColor" />
-            <span className="text-xl font-bold text-foreground">MindConnect</span>
+            <span className="text-xl font-bold text-foreground">Project Anon</span>
           </div>
 
           {/* Desktop Navigation */}
@@ -52,7 +53,9 @@ const Navbar = () => {
 
           {/* CTA Buttons */}
           <div className="hidden md:flex items-center gap-3">
-            <Button variant="ghost">Sign In</Button>
+            <Link to="/signin">
+              <Button variant="ghost">Sign In</Button>
+            </Link>
             <Button variant="hero">Get Started</Button>
           </div>
 
@@ -81,7 +84,9 @@ const Navbar = () => {
                 </a>
               ))}
               <div className="flex flex-col gap-2 pt-2 border-t border-border">
-                <Button variant="ghost" className="w-full">Sign In</Button>
+                <Link to="/signin">
+                  <Button variant="ghost" className="w-full">Sign In</Button>
+                </Link>
                 <Button variant="hero" className="w-full">Get Started</Button>
               </div>
             </div>
