@@ -12,11 +12,6 @@ const GetStarted = () => {
     },
     {
       number: "2",
-      title: "Choose Your Privacy Level",
-      description: "Decide whether you want to remain anonymous or share your profile."
-    },
-    {
-      number: "3",
       title: "Connect & Get Support",
       description: "Start talking with peers, volunteers, or licensed professionals."
     }
@@ -84,7 +79,7 @@ const GetStarted = () => {
         {/* How to Get Started */}
         <div className="mb-16">
           <h2 className="text-3xl font-bold text-center mb-12">How to Get Started</h2>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
             {steps.map((step, index) => (
               <div key={index} className="relative">
                 <Card className="h-full border-2 border-primary/30 bg-card/50 backdrop-blur-sm hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10 transition-all duration-300">
@@ -97,7 +92,7 @@ const GetStarted = () => {
                   </CardHeader>
                 </Card>
                 {index < steps.length - 1 && (
-                  <ArrowRight className="hidden md:block absolute -right-4 top-1/2 -translate-y-1/2 text-primary h-8 w-8" />
+                  <ArrowRight className="hidden md:block absolute -right-6 top-1/2 -translate-y-1/2 text-primary h-8 w-8" />
                 )}
               </div>
             ))}
