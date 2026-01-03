@@ -63,7 +63,7 @@ const ConnectionOptions = () => {
           {options.map((option, index) => (
             <Card
               key={option.title}
-              className={`overflow-hidden hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border-border/50 group ${
+              className={`overflow-hidden hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border-border/50 group flex flex-col ${
                 isVisible ? "animate-fade-in" : "opacity-0"
               }`}
               style={{ animationDelay: `${index * 150}ms` }}
@@ -98,7 +98,7 @@ const ConnectionOptions = () => {
                 </CardDescription>
               </CardHeader>
 
-              <CardContent>
+              <CardContent className="flex-1">
                 <ul className="space-y-2">
                   {option.features.map((feature, idx) => (
                     <li key={idx} className="flex items-start gap-2 text-sm text-muted-foreground">
