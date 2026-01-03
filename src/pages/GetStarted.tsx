@@ -1,9 +1,23 @@
 import { CheckCircle2, Heart, ArrowRight, Shield, Users, Clock, Linkedin, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { useEffect } from "react";
 
 const GetStarted = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const element = document.getElementById(location.hash.slice(1));
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100);
+      }
+    }
+  }, [location]);
+
   const steps = [
     {
       number: "1",
@@ -116,8 +130,8 @@ const GetStarted = () => {
         </div>
 
         {/* Team Section */}
-        <div className="mb-16">
-          <div id="team" className="text-center mb-12 scroll-mt-24 -mt-24 pt-24">
+        <div id="team" className="mb-16 scroll-mt-24">
+          <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">Meet Our Team</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               A dedicated group of mental health professionals, tech experts, and advocates working together to create a safe space for everyone.
