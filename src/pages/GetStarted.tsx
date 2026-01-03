@@ -1,4 +1,4 @@
-import { CheckCircle2, Heart, ArrowRight, Shield, Users, Clock } from "lucide-react";
+import { CheckCircle2, Heart, ArrowRight, Shield, Users, Clock, Linkedin, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
@@ -32,6 +32,45 @@ const GetStarted = () => {
       icon: Clock,
       title: "24/7 Available",
       description: "Support whenever you need it most"
+    }
+  ];
+
+  const teamMembers = [
+    {
+      name: "Dr. Sarah Johnson",
+      role: "Clinical Director",
+      bio: "Licensed clinical psychologist with 15+ years in mental health care. Passionate about making therapy accessible to everyone.",
+      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop"
+    },
+    {
+      name: "Michael Chen",
+      role: "Lead Developer",
+      bio: "Tech entrepreneur with a mission to use technology for social good. Previously worked on healthcare platforms.",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop"
+    },
+    {
+      name: "Emily Rodriguez",
+      role: "Community Manager",
+      bio: "Mental health advocate with lived experience. Trained peer support specialist dedicated to creating safe spaces.",
+      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop"
+    },
+    {
+      name: "James Anderson",
+      role: "Operations Lead",
+      bio: "Healthcare operations specialist with 10+ years of experience in building accessible and scalable care systems.",
+      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop"
+    },
+    {
+      name: "Dr. Priya Patel",
+      role: "Research Director",
+      bio: "Mental health researcher focused on evidence-based interventions. Published author in peer-reviewed journals.",
+      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop"
+    },
+    {
+      name: "Alex Turner",
+      role: "Design Lead",
+      bio: "UX designer specializing in accessible design. Believes technology should be intuitive and welcoming for all.",
+      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop"
     }
   ];
 
@@ -74,6 +113,43 @@ const GetStarted = () => {
               </CardHeader>
             </Card>
           ))}
+        </div>
+
+        {/* Team Section */}
+        <div className="mb-16">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4">Meet Our Team</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              A dedicated group of mental health professionals, tech experts, and advocates working together to create a safe space for everyone.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {teamMembers.map((member, index) => (
+              <Card key={member.name} className="overflow-hidden hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border-primary/20 bg-card/80 backdrop-blur-sm group">
+                <div className="relative h-56 overflow-hidden bg-gradient-to-br from-primary/20 to-secondary/20">
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
+                </div>
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-bold mb-1 text-foreground">{member.name}</h3>
+                  <p className="text-primary font-semibold mb-3">{member.role}</p>
+                  <p className="text-sm text-muted-foreground mb-4">{member.bio}</p>
+                  <div className="flex gap-3">
+                    <button className="p-2 rounded-full hover:bg-primary/10 text-muted-foreground hover:text-primary transition-colors">
+                      <Linkedin className="h-4 w-4" />
+                    </button>
+                    <button className="p-2 rounded-full hover:bg-primary/10 text-muted-foreground hover:text-primary transition-colors">
+                      <Mail className="h-4 w-4" />
+                    </button>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
 
         {/* How to Get Started */}
