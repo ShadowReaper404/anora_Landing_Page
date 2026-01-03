@@ -119,10 +119,10 @@ const GetStarted = () => {
         {/* Features Grid */}
         <div className="grid md:grid-cols-3 gap-6 mb-16">
           {features.map((feature, index) => (
-            <Card key={index} className="border-primary/20 bg-card/50 backdrop-blur-sm hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40">
+            <Card key={index} className="border-cyan-500/20 bg-gradient-to-br from-cyan-500/10 via-card/80 to-cyan-600/10 backdrop-blur-sm hover:shadow-xl hover:shadow-cyan-500/20 transition-all duration-300 hover:-translate-y-1 hover:border-cyan-500/40 group">
               <CardHeader>
-                <div className="inline-flex p-3 rounded-full bg-primary/10 w-fit mb-3">
-                  <feature.icon className="h-6 w-6 text-primary" />
+                <div className="inline-flex p-3 rounded-full bg-cyan-500/10 w-fit mb-3 group-hover:bg-cyan-500/20 transition-all">
+                  <feature.icon className="h-6 w-6 text-cyan-600" />
                 </div>
                 <CardTitle className="text-xl">{feature.title}</CardTitle>
                 <CardDescription className="text-base">{feature.description}</CardDescription>
