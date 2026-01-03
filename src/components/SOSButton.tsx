@@ -12,10 +12,10 @@ const SOSButton = () => {
       variant="sos"
       size="lg"
       onClick={handleSOSClick}
-      className="fixed bottom-8 right-8 z-50 rounded-full h-16 w-16 p-0 shadow-2xl hover:scale-110 transition-transform duration-200 animate-pulse hover:animate-none"
+      className="fixed bottom-8 right-8 z-50 rounded-full h-16 w-16 p-0 shadow-2xl hover:scale-110 hover:animate-none"
       aria-label="Emergency SOS - Get immediate help"
     >
-      <Phone className="h-6 w-6 animate-[wiggle_1s_ease-in-out_infinite]" />
+      <Phone className="h-6 w-6" />
     </Button>
   );
 };

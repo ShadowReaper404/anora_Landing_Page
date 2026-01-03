@@ -1,30 +1,30 @@
 import { useEffect, useRef, useState } from "react";
-import { Users, MessageCircle, Clock, Award } from "lucide-react";
+import { GraduationCap, Heart, Users, Clock } from "lucide-react";
 
 const stats = [
   {
-    icon: Users,
-    value: 50000,
+    icon: GraduationCap,
+    value: 15,
     suffix: "+",
-    label: "People Helped",
+    label: "Mental Health Professionals",
   },
   {
-    icon: MessageCircle,
-    value: 100000,
-    suffix: "+",
-    label: "Conversations",
+    icon: Heart,
+    value: 3,
+    suffix: " Years",
+    label: "In Development",
   },
   {
     icon: Clock,
     value: 24,
     suffix: "/7",
-    label: "Always Available",
+    label: "Planned Availability",
   },
   {
-    icon: Award,
-    value: 500,
-    suffix: "+",
-    label: "Verified Volunteers",
+    icon: Users,
+    value: 100,
+    suffix: "%",
+    label: "Privacy Commitment",
   },
 ];
 
@@ -80,10 +80,10 @@ const StatsSection = () => {
       <div className="container px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
-            Making a Real Impact
+            Built with Care, Launching Soon
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Join thousands who have found support and healing through our platform.
+            Our team of mental health professionals and tech experts are creating a safe, supportive platform for you.
           </p>
         </div>
 

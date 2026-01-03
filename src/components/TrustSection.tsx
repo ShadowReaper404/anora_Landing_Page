@@ -1,4 +1,4 @@
-import { Shield, Lock, Clock, CheckCircle } from "lucide-react";
+import { Shield, Lock, HeartHandshake, Award } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import {
   Tooltip,
@@ -10,23 +10,23 @@ import {
 const features = [
   {
     icon: Shield,
-    title: "Safe & Secure",
-    description: "Your privacy is our priority. All conversations are encrypted and confidential."
+    title: "Evidence-Based Approach",
+    description: "Developed with input from licensed therapists, psychologists, and peer support specialists."
   },
   {
     icon: Lock,
-    title: "Anonymous Options",
-    description: "Choose to remain completely anonymous or share as much as you're comfortable with."
+    title: "Privacy by Design",
+    description: "Built from the ground up with end-to-end encryption and HIPAA compliance standards in mind."
   },
   {
-    icon: Clock,
-    title: "24/7 Support",
-    description: "Someone is always available to listen, no matter the time of day or night."
+    icon: HeartHandshake,
+    title: "Compassionate Team",
+    description: "Founded by individuals with lived experience in mental health challenges and recovery."
   },
   {
-    icon: CheckCircle,
-    title: "Verified Helpers",
-    description: "All volunteers and professionals are thoroughly vetted and trained."
+    icon: Award,
+    title: "Rigorous Vetting",
+    description: "Every helper will undergo background checks, training, and ongoing supervision before launch."
   }
 ];
 
@@ -38,10 +38,10 @@ const TrustSection = () => {
       <div className="container px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
-            Your Well-being, Our Commitment
+            Your Well-being, Our Promise
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            We've built a platform where safety, privacy, and support come first.
+            We're building a platform where safety, privacy, and expert support come first. Here's what makes us different.
           </p>
         </div>
 
