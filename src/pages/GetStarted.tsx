@@ -116,8 +116,8 @@ const GetStarted = () => {
         </div>
 
         {/* Team Section */}
-        <div id="team" className="mb-16 scroll-mt-20">
-          <div className="text-center mb-12">
+        <div className="mb-16">
+          <div id="team" className="text-center mb-12 scroll-mt-24 -mt-24 pt-24">
             <h2 className="text-3xl font-bold mb-4">Meet Our Team</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               A dedicated group of mental health professionals, tech experts, and advocates working together to create a safe space for everyone.

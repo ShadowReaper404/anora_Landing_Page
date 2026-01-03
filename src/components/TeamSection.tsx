@@ -76,7 +76,7 @@ const TeamSection = () => {
           ))}
           
           {/* View All Card */}
-          <Link to="/get-started/#team">
+          <Link to="/get-started#team">
             <Card
               className={`overflow-hidden hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border-primary/30 bg-gradient-to-br from-primary/10 to-secondary/10 backdrop-blur-sm group cursor-pointer h-full flex items-center justify-center ${
                 isVisible ? "animate-fade-in" : "opacity-0"
