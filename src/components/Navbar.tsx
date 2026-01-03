@@ -54,9 +54,11 @@ const Navbar = () => {
 
           {/* CTA Button */}
           <div className="hidden md:flex items-center">
-            <Button variant="hero" className="rounded-full shadow-lg shadow-cyan-500/20 hover:shadow-xl hover:shadow-cyan-500/40 transition-all duration-300 hover:scale-105">
-              Get Started
-            </Button>
+            <Link to="/get-started">
+              <Button variant="hero" className="rounded-full shadow-lg shadow-cyan-500/20 hover:shadow-xl hover:shadow-cyan-500/40 transition-all duration-300 hover:scale-105">
+                Get Started
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -84,9 +86,11 @@ const Navbar = () => {
                 </a>
               ))}
               <div className="pt-2 mt-2 border-t border-primary/20">
-                <Button variant="hero" className="w-full rounded-full shadow-lg shadow-cyan-500/20">
-                  Get Started
-                </Button>
+                <Link to="/get-started">
+                  <Button variant="hero" className="w-full rounded-full shadow-lg shadow-cyan-500/20">
+                    Get Started
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
