@@ -142,4 +142,71 @@ All colors MUST be HSL.
   .story-link {
     @apply relative inline-block after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left;
   }
+  
+  /* Aurora Background Animations */
+  @keyframes aurora-1 {
+    0%, 100% {
+      transform: translate(0%, 0%) scale(1);
+      opacity: 1;
+    }
+    33% {
+      transform: translate(-10%, 10%) scale(1.2);
+      opacity: 1;
+    }
+    66% {
+      transform: translate(10%, -10%) scale(0.9);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes aurora-2 {
+    0%, 100% {
+      transform: translate(0%, 0%) scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: translate(15%, 15%) scale(1.3);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes aurora-3 {
+    0%, 100% {
+      transform: translate(0%, 0%) scale(1.1);
+      opacity: 1;
+    }
+    40% {
+      transform: translate(-15%, 5%) scale(0.9);
+      opacity: 1;
+    }
+    80% {
+      transform: translate(5%, -15%) scale(1.25);
+      opacity: 1;
+    }
+  }
+  
+  .animate-aurora-1 {
+    animation: aurora-1 15s ease-in-out infinite;
+    filter: blur(40px);
+  }
+  
+  .animate-aurora-2 {
+    animation: aurora-2 18s ease-in-out infinite;
+    animation-delay: -5s;
+    filter: blur(50px);
+  }
+  
+  .animate-aurora-3 {
+    animation: aurora-3 22s ease-in-out infinite;
+    animation-delay: -10s;
+    filter: blur(45px);
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    .animate-aurora-1,
+    .animate-aurora-2,
+    .animate-aurora-3 {
+      animation: none;
+    }
+  }
 }

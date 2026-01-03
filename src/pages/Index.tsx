@@ -9,10 +9,12 @@ import ResourcesSection from "@/components/ResourcesSection";
 import FAQSection from "@/components/FAQSection";
 import Footer from "@/components/Footer";
 import SOSButton from "@/components/SOSButton";
+import AuroraBackground from "@/components/AuroraBackground";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
+      <AuroraBackground />
       <Navbar />
       <Hero />
       <ConnectionOptions />

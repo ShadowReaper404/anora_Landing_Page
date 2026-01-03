@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link, useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import AuroraBackground from "@/components/AuroraBackground";
 
 const GetStarted = () => {
   const location = useLocation();
@@ -90,6 +91,7 @@ const GetStarted = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-secondary/30 via-background to-secondary/20">
+      <AuroraBackground />
       {/* Header */}
       <div className="container px-4 py-8">
         <Link to="/" className="inline-flex items-center gap-2 hover-scale group">
@@ -169,9 +171,9 @@ const GetStarted = () => {
         {/* How to Get Started */}
         <div className="mb-16">
           <h2 className="text-3xl font-bold text-center mb-12">How to Get Started</h2>
-          <div className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto relative">
             {steps.map((step, index) => (
-              <div key={index} className="relative">
+              <div key={index}>
                 <Card className="h-full border-2 border-primary/30 bg-card/50 backdrop-blur-sm hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10 transition-all duration-300">
                   <CardHeader>
                     <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br from-primary via-primary to-primary/80 text-white font-bold text-xl mb-4 shadow-lg shadow-primary/30">
@@ -181,11 +183,10 @@ const GetStarted = () => {
                     <CardDescription className="text-base">{step.description}</CardDescription>
                   </CardHeader>
                 </Card>
-                {index < steps.length - 1 && (
-                  <ArrowRight className="hidden md:block absolute -right-6 top-1/2 -translate-y-1/2 text-primary h-8 w-8" />
-                )}
               </div>
             ))}
+            {/* Arrow positioned between the two cards */}
+            <ArrowRight className="hidden md:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-primary h-8 w-8 z-10" />
           </div>
         </div>
 
