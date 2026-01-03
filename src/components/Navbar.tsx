@@ -52,14 +52,9 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* CTA Buttons */}
-          <div className="hidden md:flex items-center gap-3">
-            <Link to="/signin">
-              <Button variant="ghost" className="rounded-full hover:bg-primary/10">
-                Sign In
-              </Button>
-            </Link>
-            <Button variant="hero" className="rounded-full shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-all duration-300 hover:scale-105">
+          {/* CTA Button */}
+          <div className="hidden md:flex items-center">
+            <Button variant="hero" className="rounded-full shadow-lg shadow-cyan-500/20 hover:shadow-xl hover:shadow-cyan-500/40 transition-all duration-300 hover:scale-105">
               Get Started
             </Button>
           </div>
@@ -88,13 +83,8 @@ const Navbar = () => {
                   {link.label}
                 </a>
               ))}
-              <div className="flex flex-col gap-2 pt-2 mt-2 border-t border-primary/20">
-                <Link to="/signin">
-                  <Button variant="ghost" className="w-full rounded-full hover:bg-primary/10">
-                    Sign In
-                  </Button>
-                </Link>
-                <Button variant="hero" className="w-full rounded-full shadow-lg shadow-primary/20">
+              <div className="pt-2 mt-2 border-t border-primary/20">
+                <Button variant="hero" className="w-full rounded-full shadow-lg shadow-cyan-500/20">
                   Get Started
                 </Button>
               </div>
