@@ -96,7 +96,7 @@ const GetStarted = () => {
       <div className="container px-4 py-8">
         <Link to="/" className="inline-flex items-center gap-2 hover-scale group">
           <Heart className="h-6 w-6 text-primary group-hover:scale-110 transition-transform" fill="currentColor" />
-          <span className="text-xl font-bold text-foreground">Project Anon</span>
+          <span className="text-xl font-bold text-foreground">anora</span>
         </Link>
       </div>
 
@@ -104,7 +104,7 @@ const GetStarted = () => {
         {/* Hero Section */}
         <div className="text-center mb-16 animate-fade-in">
           <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Welcome to Project Anon
+            Welcome to anora
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
             A safe, anonymous platform connecting people facing mental health challenges with compassionate support. 

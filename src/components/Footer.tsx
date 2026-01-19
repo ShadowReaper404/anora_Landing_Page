@@ -44,7 +44,7 @@ const Footer = () => {
           <p className="mb-2">
             <strong className="text-foreground">Emergency:</strong> If you're in crisis, call 1333 (Suicide & Crisis Lifeline)
           </p>
-          <p>© 2025 Project Anon. Supporting mental health, one conversation at a time.</p>
+          <p>© 2025 anora. Supporting mental health, one conversation at a time.</p>
         </div>
       </div>
     </footer>

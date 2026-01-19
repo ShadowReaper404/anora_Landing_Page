@@ -25,7 +25,7 @@ const SignIn = () => {
         <div className="text-center mb-8 animate-fade-in">
           <Link to="/" className="inline-flex items-center gap-2 justify-center mb-6 hover-scale">
             <Heart className="h-8 w-8 text-primary" fill="currentColor" />
-            <span className="text-2xl font-bold text-foreground">Project Anon</span>
+            <span className="text-2xl font-bold text-foreground">anora</span>
           </Link>
           <h1 className="text-3xl font-bold text-foreground mb-2">Welcome Back</h1>
           <p className="text-muted-foreground">Sign in to access your account</p>

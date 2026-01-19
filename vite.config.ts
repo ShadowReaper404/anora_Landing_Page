@@ -16,4 +16,5 @@ export default defineConfig(({ mode }) => ({
     },
   },
   assetsInclude: ["**/*.mp4", "**/*.MP4", "**/*.webm", "**/*.mov"],
+  assetsInclude: ["**/*.PNG"],
 }));
