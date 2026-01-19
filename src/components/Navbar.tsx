@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
-import { Menu, X, Heart } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import logo from "@/assets/logo.PNG";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -27,12 +28,9 @@ const Navbar = () => {
       <div className="container px-4 mx-auto">
         <div className="flex items-center justify-between gap-4">
           {/* Logo */}
-          <div className="flex items-center gap-2.5 px-4 py-2 rounded-full bg-background/95 backdrop-blur-md shadow-md border border-primary/20 hover-scale cursor-pointer group hover:shadow-lg hover:border-primary/30 transition-all duration-300">
-            <div className="relative">
-              <Heart className="h-6 w-6 text-primary group-hover:scale-110 transition-transform duration-300" fill="currentColor" />
-              <div className="absolute inset-0 bg-primary/20 blur-xl rounded-full group-hover:bg-primary/30 transition-all duration-300" />
-            </div>
-            <span className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">anora</span>
+          <div className="flex items-center gap-3 px-6 py-3 rounded-full bg-white backdrop-blur-md shadow-md border border-primary/20 hover-scale cursor-pointer group hover:shadow-lg hover:border-primary/30 transition-all duration-300">
+            <img src={logo} alt="anora" className="h-8 w-8 object-contain group-hover:scale-110 transition-transform duration-300" />
+            <span className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors">anora</span>
           </div>
 
           {/* Pill-Style Navigation */}
