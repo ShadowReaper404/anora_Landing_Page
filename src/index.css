@@ -374,4 +374,17 @@ All colors MUST be HSL.
   .animate-pulse-slow {
     animation: pulse-slow 6s ease-in-out infinite;
   }
+
+  @keyframes float-gentle {
+    0%, 100% {
+      transform: translateY(0px) scale(1);
+    }
+    50% {
+      transform: translateY(-15px) scale(1.02);
+    }
+  }
+
+  .animate-float-gentle {
+    animation: float-gentle 4s ease-in-out infinite;
+  }
 }
