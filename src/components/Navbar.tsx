@@ -32,7 +32,7 @@ const Navbar = () => {
               <Heart className="h-6 w-6 text-primary group-hover:scale-110 transition-transform duration-300" fill="currentColor" />
               <div className="absolute inset-0 bg-primary/20 blur-xl rounded-full group-hover:bg-primary/30 transition-all duration-300" />
             </div>
-            <span className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">Project Anon</span>
+            <span className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">anora</span>
           </div>
 
           {/* Pill-Style Navigation */}
