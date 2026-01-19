@@ -28,9 +28,9 @@ const Navbar = () => {
       <div className="container px-4 mx-auto">
         <div className="flex items-center justify-between gap-4">
           {/* Logo */}
-          <div className="flex items-center gap-3 px-6 py-3 rounded-full bg-white backdrop-blur-md shadow-md border border-primary/20 hover-scale cursor-pointer group hover:shadow-lg hover:border-primary/30 transition-all duration-300">
-            <img src={logo} alt="anora" className="h-12 w-12 object-contain group-hover:scale-110 transition-transform duration-300" />
-            <span className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors">anora</span>
+          <div className="flex items-center gap-2 md:gap-3 px-4 md:px-6 py-2 md:py-3 rounded-full bg-white backdrop-blur-md shadow-md border border-primary/20 hover-scale cursor-pointer group hover:shadow-lg hover:border-primary/30 transition-all duration-300">
+            <img src={logo} alt="anora" className="h-8 w-8 md:h-12 md:w-12 object-contain group-hover:scale-110 transition-transform duration-300" />
+            <span className="text-xl md:text-2xl font-bold text-foreground group-hover:text-primary transition-colors">anora</span>
           </div>
 
           {/* Pill-Style Navigation */}
