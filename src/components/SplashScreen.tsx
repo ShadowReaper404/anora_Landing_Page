@@ -16,32 +16,81 @@ const calmingQuotes = [
 ];
 
 const SplashScreen = ({ onComplete }: SplashScreenProps) => {
-  const [quote, setQuote] = useState("");
+  const [currentQuoteIndex, setCurrentQuoteIndex] = useState(0);
+  const [quotes, setQuotes] = useState<string[]>([]);
+  const [displayedText, setDisplayedText] = useState("");
   const [fadeOut, setFadeOut] = useState(false);
+  const [ripples, setRipples] = useState<Array<{ id: number; x: number; y: number }>>([]);
 
   useEffect(() => {
-    // Select a random quote immediately
-    const randomIndex = Math.floor(Math.random() * calmingQuotes.length);
-    const selectedQuote = calmingQuotes[randomIndex];
-    
-    // Set quote immediately
-    setQuote(selectedQuote);
+    // Select 2 random quotes
+    const shuffled = [...calmingQuotes].sort(() => Math.random() - 0.5);
+    const selectedQuotes = shuffled.slice(0, 2);
+    setQuotes(selectedQuotes);
+  }, []);
+
+  // Typewriter effect
+  useEffect(() => {
+    if (quotes.length === 0) return;
+
+    const currentQuote = quotes[currentQuoteIndex] || "";
+    let charIndex = 0;
+    setDisplayedText("");
+
+    const typewriterInterval = setInterval(() => {
+      if (charIndex <= currentQuote.length) {
+        setDisplayedText(currentQuote.slice(0, charIndex));
+        charIndex++;
+      } else {
+        clearInterval(typewriterInterval);
+      }
+    }, 50);
+
+    return () => clearInterval(typewriterInterval);
+  }, [currentQuoteIndex, quotes]);
+
+  // Ripple effect
+  useEffect(() => {
+    const rippleInterval = setInterval(() => {
+      const newRipple = {
+        id: Date.now(),
+        x: Math.random() * 100,
+        y: Math.random() * 100,
+      };
+      setRipples((prev) => [...prev, newRipple]);
+
+      setTimeout(() => {
+        setRipples((prev) => prev.filter((r) => r.id !== newRipple.id));
+      }, 2000);
+    }, 800);
+
+    return () => clearInterval(rippleInterval);
+  }, []);
+
+  useEffect(() => {
+    if (quotes.length === 0) return;
+
+    // Quote transition timing
+    const quoteTransition = setTimeout(() => {
+      setCurrentQuoteIndex(1);
+    }, 3000);
 
     // Start fade out animation
     const fadeTimer = setTimeout(() => {
       setFadeOut(true);
-    }, 4500);
+    }, 6000);
 
     // Complete splash screen
     const completeTimer = setTimeout(() => {
       onComplete();
-    }, 6000);
+    }, 7000);
 
     return () => {
+      clearTimeout(quoteTransition);
       clearTimeout(fadeTimer);
       clearTimeout(completeTimer);
     };
-  }, [onComplete]);
+  }, [onComplete, quotes]);
 
   return (
     <div
@@ -55,6 +104,19 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
         <div className="absolute inset-0 bg-gradient-to-br from-violet-100/60 via-transparent to-pink-100/60 animate-breathe" />
         <div className="absolute inset-0 bg-gradient-to-tl from-blue-100/40 via-purple-50/30 to-violet-100/40 animate-breathe-slow" />
         
+        {/* Ripple effects */}
+        {ripples.map((ripple) => (
+          <div
+            key={ripple.id}
+            className="absolute w-4 h-4 rounded-full animate-ripple pointer-events-none"
+            style={{
+              left: `${ripple.x}%`,
+              top: `${ripple.y}%`,
+              background: 'radial-gradient(circle, rgba(139, 92, 246, 0.4) 0%, transparent 70%)',
+            }}
+          />
+        ))}
+        
         {/* Elegant floating orbs with better visibility */}
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-br from-purple-300/30 to-violet-400/30 rounded-full blur-3xl animate-float-slow" />
         <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-gradient-to-br from-pink-300/30 to-rose-400/30 rounded-full blur-3xl animate-float-slower" />
@@ -65,28 +127,24 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
       <div className="relative z-10 flex flex-col items-center justify-center px-6 text-center max-w-full h-full">
         {/* Quote overlay */}
         <div className="relative z-20 flex flex-col items-center justify-center px-6 text-center max-w-3xl">
-          {/* Quote with better typography and shadow */}
-          <div className="min-h-[200px] flex items-center justify-center mb-8">
+          {/* Quote with typewriter and gradient animation */}
+          <div className="min-h-[200px] flex items-center justify-center">
             <p
-              className="text-3xl md:text-4xl lg:text-5xl font-medium leading-relaxed animate-fade-in"
+              className="text-3xl md:text-4xl lg:text-5xl font-medium leading-relaxed"
               style={{ 
                 fontFamily: "'Inter', 'SF Pro Display', system-ui, sans-serif",
-                color: '#6d28d9',
-                textShadow: '0 2px 8px rgba(109, 40, 217, 0.2)'
+                background: 'linear-gradient(135deg, #6d28d9 0%, #a855f7 50%, #ec4899 100%)',
+                backgroundSize: '200% 200%',
+                backgroundClip: 'text',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                animation: 'gradientShift 3s ease infinite',
+                textShadow: 'none',
               }}
             >
-              {quote || "You are not alone in this moment."}
+              "{displayedText}
+              <span className="animate-pulse">|</span>"
             </p>
-          </div>
-
-          {/* Breathing guide with enhanced design */}
-          <div className="mt-16 flex flex-col items-center gap-4 animate-fade-in" style={{ animationDelay: "0.5s" }}>
-            <div className="flex items-center gap-3">
-              <div className="w-2.5 h-2.5 rounded-full bg-purple-400 animate-breathe-dot shadow-lg" />
-              <div className="w-2.5 h-2.5 rounded-full bg-purple-400 animate-breathe-dot shadow-lg" style={{ animationDelay: "1.3s" }} />
-              <div className="w-2.5 h-2.5 rounded-full bg-purple-400 animate-breathe-dot shadow-lg" style={{ animationDelay: "2.6s" }} />
-            </div>
-            <span className="text-base text-gray-600 font-light tracking-wider">Breathe</span>
           </div>
         </div>
       </div>
