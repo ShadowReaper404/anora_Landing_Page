@@ -1,13 +1,4 @@
 import { useEffect, useState } from "react";
-// OPTION 1: AI-Generated Video
-// Uncomment and add your AI video file to src/assets/
-// import deerVideo from "@/assets/deer-animation.mp4";
-
-// OPTION 2: Lottie Animation
-// import Lottie from "lottie-react"; // Run: npm install lottie-react
-// import walkingDeerAnimation from "@/assets/walking-deer.json";
-
-import AnimatedDeer from "./AnimatedDeer";
 
 interface SplashScreenProps {
   onComplete: () => void;
@@ -39,12 +30,12 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
     // Start fade out animation
     const fadeTimer = setTimeout(() => {
       setFadeOut(true);
-    }, 5500);
+    }, 4500);
 
     // Complete splash screen
     const completeTimer = setTimeout(() => {
       onComplete();
-    }, 7000);
+    }, 6000);
 
     return () => {
       clearTimeout(fadeTimer);
@@ -71,73 +62,32 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col items-center justify-center px-6 text-center max-w-3xl">
-        {/* Deer Animation */}
-        <div className="mb-12 animate-fade-in">
-          <div className="relative">
-            {/* Soft glow effect behind deer */}
-            <div className="absolute inset-0 bg-gradient-to-br from-purple-400/30 via-pink-400/30 to-blue-400/30 blur-3xl scale-150 animate-pulse-gentle" />
-            
-            {/* Deer Animation Container */}
-            <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 flex items-center justify-center">
-              {/* Current: SVG Placeholder */}
-              <AnimatedDeer />
-              
-              {/* 
-              ============================================
-              TO USE YOUR AI-GENERATED VIDEO:
-              ============================================
-              1. Save your AI video as: src/assets/deer-animation.mp4
-              2. Uncomment the import at the top of this file
-              3. Replace <AnimatedDeer /> above with the video code below
-              4. Remove or comment out <AnimatedDeer />
-              
-              <video 
-                autoPlay 
-                loop 
-                muted 
-                playsInline
-                className="w-full h-full object-contain rounded-2xl"
-              >
-                <source src={deerVideo} type="video/mp4" />
-              </video>
-              
-              ============================================
-              TIPS:
-              ============================================
-              - Keep video under 5MB for fast loading
-              - Duration: 3-10 seconds (will loop)
-              - Format: MP4 (H.264 codec)
-              - Resolution: 720x720 or 1080x1080
-              - Style: Transparent background looks best!
-              ============================================
-              */}
+      <div className="relative z-10 flex flex-col items-center justify-center px-6 text-center max-w-full h-full">
+        {/* Quote overlay */}
+        <div className="relative z-20 flex flex-col items-center justify-center px-6 text-center max-w-3xl">
+          {/* Quote with better typography and shadow */}
+          <div className="min-h-[200px] flex items-center justify-center mb-8">
+            <p
+              className="text-3xl md:text-4xl lg:text-5xl font-medium leading-relaxed animate-fade-in"
+              style={{ 
+                fontFamily: "'Inter', 'SF Pro Display', system-ui, sans-serif",
+                color: '#6d28d9',
+                textShadow: '0 2px 8px rgba(109, 40, 217, 0.2)'
+              }}
+            >
+              {quote || "You are not alone in this moment."}
+            </p>
+          </div>
+
+          {/* Breathing guide with enhanced design */}
+          <div className="mt-16 flex flex-col items-center gap-4 animate-fade-in" style={{ animationDelay: "0.5s" }}>
+            <div className="flex items-center gap-3">
+              <div className="w-2.5 h-2.5 rounded-full bg-purple-400 animate-breathe-dot shadow-lg" />
+              <div className="w-2.5 h-2.5 rounded-full bg-purple-400 animate-breathe-dot shadow-lg" style={{ animationDelay: "1.3s" }} />
+              <div className="w-2.5 h-2.5 rounded-full bg-purple-400 animate-breathe-dot shadow-lg" style={{ animationDelay: "2.6s" }} />
             </div>
+            <span className="text-base text-gray-600 font-light tracking-wider">Breathe</span>
           </div>
-        </div>
-
-        {/* Quote with better typography and shadow */}
-        <div className="min-h-[200px] flex items-center justify-center mb-8">
-          <p
-            className="text-3xl md:text-4xl lg:text-5xl font-medium leading-relaxed animate-fade-in"
-            style={{ 
-              fontFamily: "'Inter', 'SF Pro Display', system-ui, sans-serif",
-              color: '#6d28d9',
-              textShadow: '0 2px 8px rgba(109, 40, 217, 0.2)'
-            }}
-          >
-            {quote || "You are not alone in this moment."}
-          </p>
-        </div>
-
-        {/* Breathing guide with enhanced design */}
-        <div className="mt-16 flex flex-col items-center gap-4 animate-fade-in" style={{ animationDelay: "0.5s" }}>
-          <div className="flex items-center gap-3">
-            <div className="w-2.5 h-2.5 rounded-full bg-purple-400 animate-breathe-dot shadow-lg" />
-            <div className="w-2.5 h-2.5 rounded-full bg-purple-400 animate-breathe-dot shadow-lg" style={{ animationDelay: "1.3s" }} />
-            <div className="w-2.5 h-2.5 rounded-full bg-purple-400 animate-breathe-dot shadow-lg" style={{ animationDelay: "2.6s" }} />
-          </div>
-          <span className="text-base text-gray-600 font-light tracking-wider">Breathe</span>
         </div>
       </div>
     </div>

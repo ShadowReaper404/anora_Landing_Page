@@ -387,4 +387,19 @@ All colors MUST be HSL.
   .animate-float-gentle {
     animation: float-gentle 4s ease-in-out infinite;
   }
+
+  @keyframes breathe-deer {
+    0%, 100% {
+      opacity: 0.6;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.8;
+      transform: scale(1.03);
+    }
+  }
+
+  .animate-breathe-deer {
+    animation: breathe-deer 6s ease-in-out infinite;
+  }
 }
