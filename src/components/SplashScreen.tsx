@@ -21,21 +21,20 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
   const [displayedText, setDisplayedText] = useState("");
   const [fadeOut, setFadeOut] = useState(false);
   const [ripples, setRipples] = useState<Array<{ id: number; x: number; y: number }>>([]);
+  const [isTyping, setIsTyping] = useState(false);
 
-  useEffect(() => {
-    // Select 2 random quotes
+  // Select quotes immediately
+  const selectedQuotes = useState(() => {
     const shuffled = [...calmingQuotes].sort(() => Math.random() - 0.5);
-    const selectedQuotes = shuffled.slice(0, 2);
-    setQuotes(selectedQuotes);
-  }, []);
+    return shuffled.slice(0, 2);
+  })[0];
 
   // Typewriter effect
   useEffect(() => {
-    if (quotes.length === 0) return;
-
-    const currentQuote = quotes[currentQuoteIndex] || "";
+    const currentQuote = selectedQuotes[currentQuoteIndex] || "";
     let charIndex = 0;
     setDisplayedText("");
+    setIsTyping(true);
 
     const typewriterInterval = setInterval(() => {
       if (charIndex <= currentQuote.length) {
@@ -43,11 +42,12 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
         charIndex++;
       } else {
         clearInterval(typewriterInterval);
+        setIsTyping(false);
       }
     }, 50);
 
     return () => clearInterval(typewriterInterval);
-  }, [currentQuoteIndex, quotes]);
+  }, [currentQuoteIndex, selectedQuotes]);
 
   // Ripple effect
   useEffect(() => {
@@ -68,8 +68,6 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
   }, []);
 
   useEffect(() => {
-    if (quotes.length === 0) return;
-
     // Quote transition timing
     const quoteTransition = setTimeout(() => {
       setCurrentQuoteIndex(1);
@@ -90,7 +88,7 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
       clearTimeout(fadeTimer);
       clearTimeout(completeTimer);
     };
-  }, [onComplete, quotes]);
+  }, [onComplete]);
 
   return (
     <div
@@ -143,7 +141,7 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
               }}
             >
               "{displayedText}
-              <span className="animate-pulse">|</span>"
+              {isTyping && <span className="animate-pulse">|</span>}"
             </p>
           </div>
         </div>
