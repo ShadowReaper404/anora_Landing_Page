@@ -3,8 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link, useLocation } from "react-router-dom";
 import { useEffect } from "react";
-import AuroraBackground from "@/components/AuroraBackground";
-import teamMember1 from "@/assets/team-member-1.jpeg";
+import AuroraBackground from "@/components/AuroraBackground";import logo from "@/assets/Logo anora side full.png";import teamMember1 from "@/assets/team-member-1.jpeg";
 import teamMember2 from "@/assets/team-member-2.jpeg";
 import teamMember3 from "@/assets/team-member-3.jpeg";
 import teamMember4 from "@/assets/team-member-4.jpg";
@@ -100,14 +99,17 @@ const GetStarted = () => {
     <div className="min-h-screen bg-gradient-to-b from-secondary/30 via-background to-secondary/20">
       <AuroraBackground />
       {/* Header */}
-      <div className="container px-4 py-8">
-        <Link to="/" className="inline-flex items-center gap-2 hover-scale group">
-          <Heart className="h-6 w-6 text-primary group-hover:scale-110 transition-transform" fill="currentColor" />
-          <span className="text-xl font-bold text-foreground">anora</span>
-        </Link>
+      <div className="fixed top-0 left-0 right-0 z-50 py-4">
+        <div className="container px-4 mx-auto">
+          <Link to="/" className="inline-block">
+            <div className="px-4 py-2.5 rounded-full bg-white backdrop-blur-md shadow-md border border-primary/20 hover-scale cursor-pointer group hover:shadow-lg hover:border-primary/30 transition-all duration-300">
+              <img src={logo} alt="anora" className="h-10 md:h-12 lg:h-14 w-auto max-w-none object-contain group-hover:scale-105 transition-transform duration-300" />
+            </div>
+          </Link>
+        </div>
       </div>
 
-      <div className="container px-4 py-12 max-w-6xl mx-auto">
+      <div className="container px-4 py-12 max-w-6xl mx-auto pt-32">
         {/* Hero Section */}
         <div className="text-center mb-16 animate-fade-in">
           <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
