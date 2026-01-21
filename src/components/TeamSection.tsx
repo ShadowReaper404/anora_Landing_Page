@@ -2,26 +2,34 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { Linkedin, Mail, ArrowRight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
+import teamMember1 from "@/assets/team-member-1.jpeg";
+import teamMember2 from "@/assets/team-member-2.jpeg";
+import teamMember3 from "@/assets/team-member-3.jpeg";
+import teamMember4 from "@/assets/team-member-4.jpg";
+import teamMember5 from "@/assets/team-member-5.jpeg";
+import teamMember6 from "@/assets/team-member-6.jpeg";
+
 
 const teamMembers = [
   {
     name: "Mr. Dilshan D Prasanna",
     role: "Lead Developer",
     bio: "Tech entrepreneur with a mission to use technology for social good",
-    image: "#"
-  },
-  {
-    name: "Mr. Thusiru Kodithuwakku",
-    role: "Back End Developer",
-    bio: "Passionate about building scalable and secure backend systems",
-    image: "#"
+    image: teamMember1
   },
   {
     name: "Ms. Oshadi Ranawaka",
     role: "Front End Designer",
     bio: "UX designer specializing in accessible and user-friendly interfaces",
-    image: "#"
-  }
+    image: teamMember2
+  },
+  {
+    name: "Mr. Thusiru Kodithuwakku",
+    role: "Back End Developer",
+    bio: "Passionate about building scalable and secure backend systems",
+    image: teamMember5
+  },
+
 ];
 
 const TeamSection = () => {

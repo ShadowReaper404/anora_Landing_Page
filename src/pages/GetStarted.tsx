@@ -4,6 +4,13 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Link, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import AuroraBackground from "@/components/AuroraBackground";
+import teamMember1 from "@/assets/team-member-1.jpeg";
+import teamMember2 from "@/assets/team-member-2.jpeg";
+import teamMember3 from "@/assets/team-member-3.jpeg";
+import teamMember4 from "@/assets/team-member-4.jpg";
+import teamMember5 from "@/assets/team-member-5.jpeg";
+import teamMember6 from "@/assets/team-member-6.jpeg";
+
 
 const GetStarted = () => {
   const location = useLocation();
@@ -55,37 +62,37 @@ const GetStarted = () => {
         name: "Mr. Dilshan D Prasanna",
         role: "Project Manager/ Lead Developer",
         bio: "Tech entrepreneur with a mission to use technology for social good",
-        image: "#"
-    },
-    {
-        name: "Mr. Thusiru Kodithuwakku",
-        role: "Back End Developer",
-        bio: "Passionate about building scalable and secure backend systems",
-        image: "#"
+        image: teamMember1
     },
     {
         name: "Ms. Oshadi Ranawaka",
         role: "UI/ UX Designer",
         bio: "UX designer specializing in accessible and user-friendly interfaces",
-        image: "#"
+        image: teamMember2
     },
     {
-      name: "Mr. Thevindu Sithujaya",
-      role: "Front End Developer/ Security Specialist",
-      bio: "Focused on building secure and user-friendly web applications.",
-      image: "#"
+        name: "Mr. Thusiru Kodithuwakku",
+        role: "Back End Developer",
+        bio: "Passionate about building scalable and secure backend systems",
+        image: teamMember5
     },
     {
       name: "Ms. Senithi Premaratne",
       role: "Front End Developer/ Quality Assurance",
       bio: "Ensures a seamless and bug-free user experience through meticulous testing.",
-      image: "#"
+      image: teamMember3
+    },
+    {
+      name: "Mr. Thevindu Sithujaya",
+      role: "Front End Developer/ Security Specialist",
+      bio: "Focused on building secure and user-friendly web applications.",
+      image: teamMember4
     },
     {
       name: "Ms. Pasandi Nimsara",
-      role: "NODANI",
-      bio: "Mt sithanna ba adahaganna ba hithannawath ida na.",
-      image: "#"
+      role: "Front End Developer",
+      bio: "Dedicated to creating engaging and intuitive user interfaces.",
+      image: teamMember6
     }
   ];
 
