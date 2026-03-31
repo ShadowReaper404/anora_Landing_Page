@@ -121,7 +121,27 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground;
   }
-  
+
+  /* ── Mouse-tracking ambient spotlight ──────────────────────────────────── */
+  :root {
+    --mouse-x: 50vw;
+    --mouse-y: 50vh;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background: radial-gradient(
+      700px circle at var(--mouse-x) var(--mouse-y),
+      hsl(var(--primary) / 0.06),
+      transparent 60%
+    );
+    transition: background 0.15s ease;
+  }
+
   html {
     scroll-behavior: smooth;
   }

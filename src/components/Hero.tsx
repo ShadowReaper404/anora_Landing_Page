@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-mental-health.jpg";
 import { Heart, MessageCircle, ShieldCheck, CheckCircle2, Lock, ChevronDown } from "lucide-react";
@@ -137,6 +137,26 @@ const Hero = () => {
     setDropdownOpen(false);
   };
 
+  // ── 3D Magnetic Tilt ─────────────────────────────────────────────────────
+  const tiltRef = useRef<HTMLDivElement>(null);
+  const [tilt, setTilt] = useState({ x: 0, y: 0 });
+
+  const handleTiltMove = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
+    const el = tiltRef.current;
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    const cx = rect.left + rect.width / 2;
+    const cy = rect.top + rect.height / 2;
+    const dx = (e.clientX - cx) / (rect.width / 2);  // -1 → +1
+    const dy = (e.clientY - cy) / (rect.height / 2); // -1 → +1
+    setTilt({ x: dy * -8, y: dx * 8 }); // max 8deg
+  }, []);
+
+  const resetTilt = useCallback(() => {
+    setTilt({ x: 0, y: 0 });
+  }, []);
+  // ─────────────────────────────────────────────────────────────────────────
+
   return (
     <section
       id="home"
@@ -274,11 +294,26 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* ── Right Column – Image ── */}
-          <div className="relative animate-fade-in lg:ml-auto mt-12 lg:mt-0" style={{ animationDelay: "0.4s" }}>
-            <div className={`absolute inset-0 ${mood.blobColor} rounded-[3rem] transform rotate-3 scale-105 -z-10 transition-all duration-700 hover:rotate-6`} />
+          {/* ── Right Column – Image with 3D Magnetic Tilt ── */}
+          <div
+            ref={tiltRef}
+            className="relative animate-fade-in lg:ml-auto mt-12 lg:mt-0 cursor-pointer"
+            style={{ animationDelay: "0.4s", perspective: "1000px" }}
+            onMouseMove={handleTiltMove}
+            onMouseLeave={resetTilt}
+          >
+            <div className={`absolute inset-0 ${mood.blobColor} rounded-[3rem] transform rotate-3 scale-105 -z-10 transition-all duration-700`} />
 
-            <div className="relative rounded-[3rem] overflow-hidden border border-border/50 shadow-2xl bg-white max-w-[500px] mx-auto aspect-[4/5]">
+            <div
+              className="relative rounded-[3rem] overflow-hidden border border-border/50 shadow-2xl bg-white max-w-[500px] mx-auto aspect-[4/5]"
+              style={{
+                transform: `rotateX(${tilt.x}deg) rotateY(${tilt.y}deg) scale(${tilt.x !== 0 || tilt.y !== 0 ? 1.03 : 1})`,
+                transition: tilt.x === 0 && tilt.y === 0
+                  ? "transform 0.6s cubic-bezier(0.16,1,0.3,1)"
+                  : "transform 0.1s linear",
+                willChange: "transform",
+              }}
+            >
               <img
                 src={heroImage}
                 alt="Mental health support – peaceful nature scene"

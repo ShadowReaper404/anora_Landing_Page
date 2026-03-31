@@ -4,23 +4,27 @@ import ConnectionOptions from "@/components/ConnectionOptions";
 import StatsSection from "@/components/StatsSection";
 import TrustSection from "@/components/TrustSection";
 import TeamSection from "@/components/TeamSection";
-import TestimonialsSection from "@/components/TestimonialsSection";
+import InfiniteMarquee from "@/components/InfiniteMarquee";
 import ResourcesSection from "@/components/ResourcesSection";
 import FAQSection from "@/components/FAQSection";
 import Footer from "@/components/Footer";
 import SOSButton from "@/components/SOSButton";
 import EmpathySection from "@/components/EmpathySection";
 import { LineArtDivider } from "@/components/LivingLineArt";
+import MouseSpotlight from "@/components/MouseSpotlight";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background relative">
+      {/* 🖱️ Global mouse-following ambient glow – updates CSS vars */}
+      <MouseSpotlight />
+
       <Navbar />
 
-      {/* ── Hero – self-animated ── */}
+      {/* ── Hero (self-animated + 3D tilt on image) ── */}
       <Hero />
 
-      {/* ╌╌╌ Ripple: water settling after calm ╌╌╌ */}
+      {/* ╌╌╌ Ripple: calm arriving ╌╌╌ */}
       <LineArtDivider
         art="ripple"
         color="hsl(var(--primary))"
@@ -29,12 +33,12 @@ const Index = () => {
         className="opacity-60"
       />
 
-      {/* ── Ways to connect ── */}
+      {/* ── Connection options ── */}
       <EmpathySection variant="rise" delay={0} as="div">
         <ConnectionOptions />
       </EmpathySection>
 
-      {/* ╌╌╌ Wave: the journey flowing on ╌╌╌ */}
+      {/* ╌╌╌ Wave ╌╌╌ */}
       <LineArtDivider
         art="wave"
         color="hsl(var(--primary))"
@@ -47,7 +51,7 @@ const Index = () => {
         <StatsSection />
       </EmpathySection>
 
-      {/* ╌╌╌ Bloom: growth between trust signals ╌╌╌ */}
+      {/* ╌╌╌ Bloom ╌╌╌ */}
       <LineArtDivider
         art="bloom"
         color="hsl(var(--primary))"
@@ -61,7 +65,7 @@ const Index = () => {
         <TrustSection />
       </EmpathySection>
 
-      {/* ╌╌╌ Breath guide: pause before meeting the team ╌╌╌ */}
+      {/* ╌╌╌ Breath guide ╌╌╌ */}
       <LineArtDivider
         art="breath"
         color="hsl(var(--primary))"
@@ -75,7 +79,7 @@ const Index = () => {
         <TeamSection />
       </EmpathySection>
 
-      {/* ╌╌╌ Constellation: community of connected souls ╌╌╌ */}
+      {/* ╌╌╌ Constellation ╌╌╌ */}
       <LineArtDivider
         art="constellation"
         color="hsl(var(--primary))"
@@ -83,12 +87,12 @@ const Index = () => {
         className="opacity-40 my-2"
       />
 
-      {/* ── Testimonials ── */}
+      {/* 🎟️ INFINITE DUAL-ROW MARQUEE (replaces standard testimonials carousel) */}
       <EmpathySection variant="drift-right" delay={0} as="div">
-        <TestimonialsSection />
+        <InfiniteMarquee />
       </EmpathySection>
 
-      {/* ╌╌╌ Wave (softer): resources flow to you ╌╌╌ */}
+      {/* ╌╌╌ Soft wave ╌╌╌ */}
       <LineArtDivider
         art="wave"
         color="hsl(var(--muted-foreground))"
@@ -101,7 +105,7 @@ const Index = () => {
         <ResourcesSection />
       </EmpathySection>
 
-      {/* ╌╌╌ Ripple: questions ripple out ╌╌╌ */}
+      {/* ╌╌╌ Ripple ╌╌╌ */}
       <LineArtDivider
         art="ripple"
         color="hsl(var(--primary))"
@@ -115,7 +119,7 @@ const Index = () => {
         <FAQSection />
       </EmpathySection>
 
-      {/* ──  Footer ── */}
+      {/* ── Footer ── */}
       <EmpathySection variant="mist" delay={0} as="div">
         <Footer />
       </EmpathySection>
