@@ -155,6 +155,50 @@ All colors MUST be HSL.
   .story-link {
     @apply relative inline-block after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left;
   }
+
+  /* ── Aurora-Shine card border: rotating conic-gradient border glow ──── */
+  @property --shine-angle {
+    syntax: '<angle>';
+    inherits: false;
+    initial-value: 0deg;
+  }
+  @keyframes card-shine-spin {
+    to { --shine-angle: 360deg; }
+  }
+  .shine-border {
+    position: relative;
+    border: none !important;
+    background: white;
+    border-radius: 1.5rem;
+  }
+  .shine-border::before {
+    content: '';
+    position: absolute;
+    inset: -1.5px;
+    border-radius: inherit;
+    background: conic-gradient(
+      from var(--shine-angle),
+      transparent 0deg,
+      hsl(var(--primary) / 0.9) 60deg,
+      hsl(var(--primary) / 0.15) 120deg,
+      transparent 180deg
+    );
+    animation: card-shine-spin 4s linear infinite;
+    z-index: -1;
+  }
+
+  /* ── Slow float variants for the GetStarted blobs ── */
+  @keyframes float-slow {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50%       { transform: translate(12px, -18px) scale(1.04); }
+  }
+  @keyframes float-slower {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50%       { transform: translate(-10px, 14px) scale(1.03); }
+  }
+  .animate-float-slow   { animation: float-slow   18s ease-in-out infinite; }
+  .animate-float-slower { animation: float-slower 24s ease-in-out infinite; }
+
   
   /* Aurora Background Animations */
   @keyframes aurora-1 {

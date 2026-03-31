@@ -12,114 +12,67 @@ import SOSButton from "@/components/SOSButton";
 import EmpathySection from "@/components/EmpathySection";
 import { LineArtDivider } from "@/components/LivingLineArt";
 import MouseSpotlight from "@/components/MouseSpotlight";
+import CustomCursor from "@/components/CustomCursor";
+import LiveActivityToast from "@/components/LiveActivityToast";
+import ScrollProgressBar from "@/components/ScrollProgressBar";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background relative">
-      {/* 🖱️ Global mouse-following ambient glow – updates CSS vars */}
+      {/* ── Global chrome ── */}
+      <CustomCursor />
+      <ScrollProgressBar />
       <MouseSpotlight />
+      <LiveActivityToast />
 
       <Navbar />
 
-      {/* ── Hero (self-animated + 3D tilt on image) ── */}
+      {/* ── Hero (mood engine + 3D tilt) ── */}
       <Hero />
 
-      {/* ╌╌╌ Ripple: calm arriving ╌╌╌ */}
-      <LineArtDivider
-        art="ripple"
-        color="hsl(var(--primary))"
-        strokeWidth={1.2}
-        maxWidth={400}
-        className="opacity-60"
-      />
+      <LineArtDivider art="ripple" color="hsl(var(--primary))" strokeWidth={1.2} maxWidth={400} className="opacity-60" />
 
-      {/* ── Connection options ── */}
       <EmpathySection variant="rise" delay={0} as="div">
         <ConnectionOptions />
       </EmpathySection>
 
-      {/* ╌╌╌ Wave ╌╌╌ */}
-      <LineArtDivider
-        art="wave"
-        color="hsl(var(--primary))"
-        strokeWidth={1.5}
-        className="opacity-50"
-      />
+      <LineArtDivider art="wave" color="hsl(var(--primary))" strokeWidth={1.5} className="opacity-50" />
 
-      {/* ── Stats ── */}
       <EmpathySection variant="breathe" delay={60} as="div">
         <StatsSection />
       </EmpathySection>
 
-      {/* ╌╌╌ Bloom ╌╌╌ */}
-      <LineArtDivider
-        art="bloom"
-        color="hsl(var(--primary))"
-        strokeWidth={1.2}
-        maxWidth={140}
-        className="opacity-60 my-2"
-      />
+      <LineArtDivider art="bloom" color="hsl(var(--primary))" strokeWidth={1.2} maxWidth={140} className="opacity-60 my-2" />
 
-      {/* ── Trust pillars ── */}
       <EmpathySection variant="drift-left" delay={0} as="div">
         <TrustSection />
       </EmpathySection>
 
-      {/* ╌╌╌ Breath guide ╌╌╌ */}
-      <LineArtDivider
-        art="breath"
-        color="hsl(var(--primary))"
-        strokeWidth={1.0}
-        maxWidth={140}
-        className="opacity-50 my-2"
-      />
+      <LineArtDivider art="breath" color="hsl(var(--primary))" strokeWidth={1.0} maxWidth={140} className="opacity-50 my-2" />
 
-      {/* ── Team ── */}
       <EmpathySection variant="rise" delay={80} as="div">
         <TeamSection />
       </EmpathySection>
 
-      {/* ╌╌╌ Constellation ╌╌╌ */}
-      <LineArtDivider
-        art="constellation"
-        color="hsl(var(--primary))"
-        strokeWidth={1.0}
-        className="opacity-40 my-2"
-      />
+      <LineArtDivider art="constellation" color="hsl(var(--primary))" strokeWidth={1.0} className="opacity-40 my-2" />
 
-      {/* 🎟️ INFINITE DUAL-ROW MARQUEE (replaces standard testimonials carousel) */}
+      {/* 🎟️ Infinite dual-row testimonial marquee */}
       <EmpathySection variant="drift-right" delay={0} as="div">
         <InfiniteMarquee />
       </EmpathySection>
 
-      {/* ╌╌╌ Soft wave ╌╌╌ */}
-      <LineArtDivider
-        art="wave"
-        color="hsl(var(--muted-foreground))"
-        strokeWidth={1.0}
-        className="opacity-30 my-2"
-      />
+      <LineArtDivider art="wave" color="hsl(var(--muted-foreground))" strokeWidth={1.0} className="opacity-30 my-2" />
 
-      {/* ── Resources ── */}
       <EmpathySection variant="mist" delay={0} as="div">
         <ResourcesSection />
       </EmpathySection>
 
-      {/* ╌╌╌ Ripple ╌╌╌ */}
-      <LineArtDivider
-        art="ripple"
-        color="hsl(var(--primary))"
-        strokeWidth={1.0}
-        maxWidth={280}
-        className="opacity-40"
-      />
+      <LineArtDivider art="ripple" color="hsl(var(--primary))" strokeWidth={1.0} maxWidth={280} className="opacity-40" />
 
-      {/* ── FAQ ── */}
       <EmpathySection variant="rise" delay={60} as="div">
         <FAQSection />
       </EmpathySection>
 
-      {/* ── Footer ── */}
       <EmpathySection variant="mist" delay={0} as="div">
         <Footer />
       </EmpathySection>
