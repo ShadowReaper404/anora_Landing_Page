@@ -96,143 +96,140 @@ const GetStarted = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-secondary/30 via-background to-secondary/20">
+    <div className="min-h-screen bg-transparent relative overflow-hidden">
       <AuroraBackground />
       {/* Header */}
       <div className="fixed top-0 left-0 right-0 z-50 py-4">
         <div className="container px-4 mx-auto">
           <Link to="/" className="inline-block">
-            <div className="px-4 py-2.5 rounded-full bg-white backdrop-blur-md shadow-md border border-primary/20 hover-scale cursor-pointer group hover:shadow-lg hover:border-primary/30 transition-all duration-300">
-              <img src={logo} alt="anora" className="h-10 md:h-12 lg:h-14 w-auto max-w-none object-contain group-hover:scale-105 transition-transform duration-300" />
+            <div className="px-5 py-3 rounded-full bg-white/20 backdrop-blur-xl shadow-sm border border-white/30 cursor-pointer group hover:shadow-md hover:bg-white/30 transition-all duration-300">
+              <img src={logo} alt="anora" className="h-10 md:h-12 w-auto max-w-none object-contain group-hover:scale-105 transition-transform duration-300" />
             </div>
           </Link>
         </div>
       </div>
 
-      <div className="container px-4 py-12 max-w-6xl mx-auto pt-32">
-        {/* Hero Section */}
-        <div className="text-center mb-16 animate-fade-in">
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Welcome to anora
+      <div className="container relative z-10 px-4 py-12 max-w-6xl mx-auto pt-32">
+        {/* Welcome Section */}
+        <div className="text-center mb-16 animate-fade-in relative">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-primary/20 blur-[100px] rounded-full -z-10 pointer-events-none"></div>
+          
+          <h1 className="text-5xl md:text-7xl font-heading font-bold text-foreground mb-6 tracking-tight drop-shadow-sm">
+            Welcome to <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-indigo-500">anora</span>
           </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
+          <p className="text-xl md:text-2xl text-foreground/80 max-w-3xl mx-auto mb-10 font-medium leading-relaxed">
             A safe, anonymous platform connecting people facing mental health challenges with compassionate support. 
             We're building a community where everyone can find help without judgment.
           </p>
-          <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary/10 border border-primary/30 text-primary font-semibold shadow-lg">
-            <CheckCircle2 className="h-5 w-5" />
+          <div className="inline-flex items-center gap-3 px-6 py-4 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-foreground font-semibold shadow-sm hover:scale-105 transition-transform duration-300">
+            <CheckCircle2 className="h-5 w-5 text-emerald-600" />
             Launching Soon - Join Our Waitlist
           </div>
         </div>
 
         {/* Features Grid */}
-        <div className="grid md:grid-cols-3 gap-6 mb-16">
+        <div className="grid md:grid-cols-3 gap-6 mb-24 relative">
           {features.map((feature, index) => (
-            <Card key={index} className="border-cyan-500/20 bg-gradient-to-br from-cyan-500/10 via-card/80 to-cyan-600/10 backdrop-blur-sm hover:shadow-xl hover:shadow-cyan-500/20 transition-all duration-300 hover:-translate-y-1 hover:border-cyan-500/40 group">
-              <CardHeader>
-                <div className="inline-flex p-3 rounded-full bg-cyan-500/10 w-fit mb-3 group-hover:bg-cyan-500/20 transition-all">
-                  <feature.icon className="h-6 w-6 text-cyan-600" />
-                </div>
-                <CardTitle className="text-xl">{feature.title}</CardTitle>
-                <CardDescription className="text-base">{feature.description}</CardDescription>
-              </CardHeader>
-            </Card>
+            <div key={index} className="p-8 md:p-10 rounded-[2.5rem] bg-white/10 backdrop-blur-xl border border-white/20 shadow-[0_8px_32px_0_rgba(31,38,135,0.07)] hover:-translate-y-2 hover:bg-white/20 transition-all duration-300 group">
+              <div className="inline-flex p-4 rounded-2xl bg-white/30 backdrop-blur-md shadow-sm mb-6 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300 border border-white/40">
+                <feature.icon className="h-8 w-8 text-primary" />
+              </div>
+              <h3 className="text-2xl font-heading font-bold mb-3 text-foreground">{feature.title}</h3>
+              <p className="text-foreground/75 font-medium text-lg leading-relaxed">{feature.description}</p>
+            </div>
           ))}
         </div>
 
         {/* Team Section */}
-        <div id="team" className="mb-16 scroll-mt-24">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Meet Our Team</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+        <div id="team" className="mb-24 scroll-mt-32">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6 drop-shadow-sm">Meet Our Team</h2>
+            <p className="text-xl text-foreground/80 max-w-2xl mx-auto font-medium leading-relaxed">
               A dedicated group of mental health professionals, tech experts, and advocates working together to create a safe space for everyone.
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {teamMembers.map((member, index) => (
-              <Card key={member.name} className="overflow-hidden hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border-primary/20 bg-card/80 backdrop-blur-sm group">
-                <div className="relative h-56 overflow-hidden bg-gradient-to-br from-primary/20 to-secondary/20">
+              <div key={member.name} className="overflow-hidden rounded-[2.5rem] bg-white/10 backdrop-blur-xl border border-white/20 shadow-[0_8px_32px_0_rgba(31,38,135,0.07)] hover:-translate-y-2 hover:shadow-2xl transition-all duration-500 group">
+                <div className="relative h-72 overflow-hidden">
                   <img
                     src={member.image}
                     alt={member.name}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent opacity-90" />
                 </div>
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-bold mb-1 text-foreground">{member.name}</h3>
-                  <p className="text-primary font-semibold mb-3">{member.role}</p>
-                  <p className="text-sm text-muted-foreground mb-4">{member.bio}</p>
+                <div className="p-8 relative z-10 -mt-24">
+                  <h3 className="text-2xl font-heading font-bold mb-2 text-foreground">{member.name}</h3>
+                  <p className="text-primary font-semibold mb-4">{member.role}</p>
+                  <p className="text-base text-foreground/80 mb-8 font-medium leading-relaxed">{member.bio}</p>
                   <div className="flex gap-3">
-                    <button className="p-2 rounded-full hover:bg-primary/10 text-muted-foreground hover:text-primary transition-colors">
-                      <Linkedin className="h-4 w-4" />
+                    <button className="p-3 w-12 h-12 flex items-center justify-center rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-foreground hover:bg-primary hover:text-white hover:border-primary transition-all duration-300 shadow-sm hover:scale-110">
+                      <Linkedin className="h-5 w-5" />
                     </button>
-                    <button className="p-2 rounded-full hover:bg-primary/10 text-muted-foreground hover:text-primary transition-colors">
-                      <Mail className="h-4 w-4" />
+                    <button className="p-3 w-12 h-12 flex items-center justify-center rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-foreground hover:bg-primary hover:text-white hover:border-primary transition-all duration-300 shadow-sm hover:scale-110">
+                      <Mail className="h-5 w-5" />
                     </button>
                   </div>
-                </CardContent>
-              </Card>
+                </div>
+              </div>
             ))}
           </div>
         </div>
 
         {/* How to Get Started */}
-        <div className="mb-16">
-          <h2 className="text-3xl font-bold text-center mb-12">How to Get Started</h2>
-          <div className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto relative">
+        <div className="mb-24">
+          <h2 className="text-4xl md:text-5xl font-heading font-bold text-center mb-16 drop-shadow-sm">How to Get Started</h2>
+          <div className="grid md:grid-cols-2 gap-8 lg:gap-12 max-w-5xl mx-auto relative">
             {steps.map((step, index) => (
-              <div key={index}>
-                <Card className="h-full border-2 border-primary/30 bg-card/50 backdrop-blur-sm hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10 transition-all duration-300">
-                  <CardHeader>
-                    <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br from-primary via-primary to-primary/80 text-white font-bold text-xl mb-4 shadow-lg shadow-primary/30">
-                      {step.number}
-                    </div>
-                    <CardTitle className="text-xl mb-2">{step.title}</CardTitle>
-                    <CardDescription className="text-base">{step.description}</CardDescription>
-                  </CardHeader>
-                </Card>
+              <div key={index} className="p-8 lg:p-12 rounded-[3rem] bg-white/10 backdrop-blur-xl border border-white/20 shadow-[0_8px_32px_0_rgba(31,38,135,0.07)] hover:-translate-y-2 hover:bg-white/20 transition-all duration-300">
+                <div className="inline-flex items-center justify-center w-20 h-20 rounded-[1.5rem] bg-gradient-to-br from-primary to-indigo-500 text-white font-heading font-bold text-3xl mb-8 shadow-lg shadow-primary/30 -rotate-3 group-hover:rotate-0 transition-transform">
+                  {step.number}
+                </div>
+                <h3 className="text-3xl font-heading font-bold mb-4 text-foreground">{step.title}</h3>
+                <p className="text-xl text-foreground/75 font-medium leading-relaxed">{step.description}</p>
               </div>
             ))}
             {/* Arrow positioned between the two cards */}
-            <ArrowRight className="hidden md:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-primary h-8 w-8 z-10" />
+            <ArrowRight className="hidden md:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-primary/40 h-16 w-16 z-10" />
           </div>
         </div>
 
         {/* Call to Action */}
-        <Card className="bg-gradient-to-br from-primary/10 via-primary/5 to-secondary/10 border-2 border-primary/30 shadow-xl">
-          <CardContent className="p-12 text-center">
-            <h2 className="text-3xl font-bold mb-4">Ready to Begin Your Journey?</h2>
-            <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+        <div className="relative overflow-hidden rounded-[3.5rem] bg-gradient-to-br from-white/20 to-white/5 backdrop-blur-3xl border border-white/30 shadow-[0_8px_32px_0_rgba(31,38,135,0.1)]">
+           <div className="absolute top-0 right-0 w-96 h-96 bg-primary/20 rounded-full filter blur-[100px] pointer-events-none"></div>
+           <div className="absolute bottom-0 left-0 w-96 h-96 bg-indigo-500/20 rounded-full filter blur-[100px] pointer-events-none"></div>
+           <div className="relative z-10 p-12 md:p-20 text-center">
+            <h2 className="text-4xl md:text-6xl font-heading font-bold mb-6 text-foreground drop-shadow-sm tracking-tight">Ready to Begin?</h2>
+            <p className="text-xl md:text-2xl text-foreground/80 mb-12 max-w-3xl mx-auto font-medium leading-relaxed">
               Join our community and take the first step towards better mental health. 
               Sign up now to get early access when we launch.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-5 justify-center">
               <Button 
                 size="lg" 
-                variant="hero"
-                className="text-lg px-8 py-6 h-auto shadow-xl hover:shadow-2xl transition-all duration-300"
+                className="text-xl px-10 py-8 rounded-full bg-primary hover:bg-primary-dark text-white shadow-xl shadow-primary/25 hover:shadow-2xl hover:-translate-y-1 hover:scale-105 transition-all duration-300 font-semibold"
               >
                 Join Waitlist
-                <ArrowRight className="ml-2 h-5 w-5" />
+                <ArrowRight className="ml-3 h-6 w-6" />
               </Button>
               <Link to="/">
                 <Button 
                   size="lg" 
                   variant="outline"
-                  className="text-lg px-8 py-6 h-auto border-2 border-primary/50 hover:bg-primary/10 hover:border-primary transition-all duration-300"
+                  className="text-xl px-10 py-8 rounded-full bg-white/20 backdrop-blur-md text-foreground border-white/40 hover:bg-white/50 hover:text-primary hover:-translate-y-1 hover:scale-105 transition-all duration-300 font-semibold shadow-sm"
                 >
                   Learn More
                 </Button>
               </Link>
             </div>
-          </CardContent>
-        </Card>
+          </div>
+        </div>
 
         {/* Footer Note */}
-        <p className="text-center text-sm text-muted-foreground mt-12">
-          Need immediate help? Call the National Suicide Prevention Lifeline at <strong>988</strong> or 
-          text HOME to <strong>741741</strong> for Crisis Text Line.
+        <p className="text-center text-sm md:text-base text-foreground/60 mt-16 font-medium">
+          Need immediate help? Call the National Suicide Prevention Lifeline at <strong className="text-foreground">988</strong> or 
+          text HOME to <strong className="text-foreground">741741</strong> for Crisis Text Line.
         </p>
       </div>
     </div>
