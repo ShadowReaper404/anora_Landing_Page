@@ -2,11 +2,11 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { Linkedin, Mail, ArrowRight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
-import teamMember1 from "@/assets/team-member-1.jpeg";
-import teamMember2 from "@/assets/team-member-2.jpeg";
-import teamMember3 from "@/assets/team-member-3.jpeg";
-import teamMember4 from "@/assets/team-member-4.jpg";
-import teamMember5 from "@/assets/team-member-5.jpeg";
+import teamMember1 from "@/assets/team-member-1.webp";
+import teamMember2 from "@/assets/team-member-2.webp";
+import teamMember3 from "@/assets/team-member-3.webp";
+import teamMember4 from "@/assets/team-member-4.webp";
+import teamMember5 from "@/assets/team-member-5.webp";
 import teamMember6 from "@/assets/team-member-6.jpeg";
 
 

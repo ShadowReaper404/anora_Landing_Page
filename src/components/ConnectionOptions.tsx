@@ -3,9 +3,9 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-import anonymousImage from "@/assets/anonymous-chat.png";
+import anonymousImage from "@/assets/anonymous-chat.webp";
 import volunteersImage from "@/assets/volunteers.png";
-import professionalsImage from "@/assets/professionals.png";
+import professionalsImage from "@/assets/professionals.webp";
 
 const options = [
   {

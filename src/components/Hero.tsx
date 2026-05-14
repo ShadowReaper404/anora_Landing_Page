@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/hero-mental-health.jpg";
+import heroImage from "@/assets/hero-mental-health.webp";
 import { Heart, MessageCircle, ShieldCheck, CheckCircle2, Lock, ChevronDown } from "lucide-react";
 
 // ─── Mood Configuration ───────────────────────────────────────────────────────
